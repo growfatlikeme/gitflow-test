@@ -1,8 +1,10 @@
-name: Terraform Deployment
+name: Terraform Destroyal Workflow
 
 on:
-  push:
-    branches: ["main"]
+  workflow_run:
+    workflows: ["Terraform Deployment"]
+    types:
+      - completed
 
 env:
   AWS_REGION: ap-southeast-1
